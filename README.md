@@ -17,4 +17,4 @@ react-native run-ios
 
 And there ya go!
 
-Design By: Alexa Leight Herasimchuk
+Design By: Alexa Leigh Herasimchuk

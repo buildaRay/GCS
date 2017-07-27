@@ -13,7 +13,17 @@ import logo from '../../assets/images/gsc-logo.png'
 
 export default class WelcomeScreen extends React.Component{
 	
+	state = {
+		_showOverlay : false
+	}
+	
+	_showOverlay(){
+		console.log('hello')
+	}
+
 	render(){
+
+		const _showOverlay = this._showOverlay
 		return(
 			<View style={styles.container}>
 				<View style={styles.logoContainer}>
@@ -24,12 +34,12 @@ export default class WelcomeScreen extends React.Component{
 					<Text style={[styles.infoFont, styles.whiteFont]}>San Francisco, CA</Text>
 					<View style={styles.buttonContainer}>
 						<TouchableHighlight onPress={() => {
-					          console.log('test')
+					          _showOverlay()
 					        }}>
 					          <View style={styles.button}><Text style={[styles.whiteFont, styles.buttonFont]}>Get Started</Text></View>
 					        </TouchableHighlight>
 					        <TouchableHighlight onPress={() => {
-					          console.log('test')
+					          _showOverlay()
 					        }}>
 					          <View style={styles.button}><Text style={[styles.whiteFont, styles.buttonFont]}>Learn More</Text></View>
 			        </TouchableHighlight>
@@ -81,12 +91,18 @@ const styles = StyleSheet.create({
 		fontSize: 15,
 		padding: 2,
 		lineHeight: 20,
-
 	},
 	buttonFont: {
 		fontSize: 15,
 	},
 	whiteFont: {
 		color: '#fff'
+	},
+	overlay: {
+		position: 'absolute',
+		top: Dimensions.get('window').height,
+		width: Dimensions.get('window').width,
+		height: Dimensions.get('window').height, 
+		backgroundColor: '#fff'
 	}
 })
